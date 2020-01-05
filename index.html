@@ -33,7 +33,7 @@
     <link rel="alternate" href="/atom.xml" title="Meng&#39;s Blog" type="application/atom+xml">
     <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
     
-    <link rel="stylesheet" href="/highlightjs/monokai.css" type="text/css">
+    <link rel="stylesheet" href="/highlightjs/monokai_sublime.css" type="text/css">
     
 
     <!--[if IE 8]>
@@ -80,7 +80,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/Work/" class="animsition-link">Work<small>(1)</small></a></li>
+				    <li><a href="/categories/Work/" class="animsition-link">Work<small>(2)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -188,7 +188,44 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2020/01/05/Android-Code-Style/">Android 开发编码规范</a></h3>
+                    <h3><a href="/2020/01/05/SparseArray/">SparseArray</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2020-01-05T15:57:20.000Z" itemprop="datePublished">
+          2020-01-05
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        
+SparseArray 是 Android 提供的轻量级数据结构，从字面意思看指的是稀疏数组
+因为 SparseArray 不需要对 key 和 value 进行 auto-boxing，所以在某些情况下要比 HashMap 的性能更好
+SparseArray 主要使用两个一维数组来分别存储 key 和 value，不需要额外的数据结构
+
+稀疏数组
+稀疏数组可以看做是普通数组（值的无效数据量远大于有效数据量）的压缩
+使用额外的行列来对
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2020/01/05/SparseArray/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2020/01/05/AndroidCodeStyle/">Android 开发编码规范</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2020-01-05T15:20:30.000Z" itemprop="datePublished">
@@ -218,7 +255,7 @@ Android Studio 规范
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2020/01/05/Android-Code-Style/">Read More...</a>
+                        <a href="/2020/01/05/AndroidCodeStyle/">Read More...</a>
                     </p>
                     
                 </div>
