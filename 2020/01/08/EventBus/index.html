@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Meng&#39;s Blog</title>
+  <title>EventBus | Meng&#39;s Blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -150,47 +150,12 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p></p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
+      
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/01/08/EventBus/">EventBus</a></h3>
-                    <span>
-                        <span class="post-meta">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
       <time datetime="2020-01-08T15:41:09.000Z" itemprop="datePublished">
           2020-01-08
       </time>
@@ -201,173 +166,94 @@
     
     
 </span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        优缺点
-独立出了发布订阅模块，调用者可以通过使用这个模块屏蔽一些线程切换问题，简单的实现了发布订阅功能
-
-简化了交互，降低了耦合
-
-事件分发是通过注解函数的参数类型决定的，当接收者过多或相同参数时很难理清消息流
-
-容易大量滥用造成逻辑分散
-
-
-原理
-注册时先解析出带有相应注解的方法，然后将其的 Method 对象与其订阅的消息类型绑定加入到一个集合中，然后发送消息时获取到消息类型所对应的订阅事件的 Method 对象，通过反射调用执行
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/01/08/EventBus/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
+                <h1>EventBus</h1>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/01/07/Animation/">Animation</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-01-07T15:28:23.000Z" itemprop="datePublished">
-          2020-01-07
-      </time>
-    
-    
-    | 
-    <a href='/tags/Android/'>Android</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        View Animation
-视图动画，也叫补间动画，可以在一个视图容器内执行一系列的简单变换（位置、大小、旋转、透明度）
-可以通过 xml 或者 Android 代码定义，建议使用 xml 定义，更具有可读性和可重用性
-常用的有 AlphaAnimation RotateAnimation ScaleAnimation TranslateAnimation 和 AnimationSet，对 set 标签使用 Animation 属性时
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/01/07/Animation/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/01/05/SparseArray/">SparseArray</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-01-05T15:57:20.000Z" itemprop="datePublished">
-          2020-01-05
-      </time>
-    
-    
-    | 
-    <a href='/tags/Android/'>Android</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-SparseArray 是 Android 提供的轻量级数据结构，从字面意思看指的是稀疏数组
-因为 SparseArray 不需要对 key 和 value 进行 auto-boxing，所以在某些情况下要比 HashMap 的性能更好
-SparseArray 主要使用两个一维数组来分别存储 key 和 value，不需要额外的数据结构
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ul>
+<li><p>独立出了发布订阅模块，调用者可以通过使用这个模块屏蔽一些线程切换问题，简单的实现了发布订阅功能</p>
+</li>
+<li><p>简化了交互，降低了耦合</p>
+</li>
+<li><p>事件分发是通过注解函数的参数类型决定的，当接收者过多或相同参数时很难理清消息流</p>
+</li>
+<li><p>容易大量滥用造成逻辑分散</p>
+</li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>注册时先解析出带有相应注解的方法，然后将其的 <code>Method</code> 对象与其订阅的消息类型绑定加入到一个集合中，然后发送消息时获取到消息类型所对应的订阅事件的 <code>Method</code> 对象，通过反射调用执行</li>
+<li><code>METHOD_CACHE</code> 是一个 <code>ConcurrentHashMap</code> 用已注册类的 <strong>class</strong> 为 key，值为所有该类中的 EventBus 回调方法链表</li>
+<li><code>subscriptionByEventType</code> 是一个类型为 <code>Map&lt;Class&lt;?&gt;, CopyOnWriteArrayList&lt;Subscription&gt;&gt;</code> 的 Map，键为 Event 类型，值为 Subscribtion （订阅信息）链表</li>
+<li>注册时，将先从 <code>METHOD_CACHE&lt;Class&lt;?&gt;, List&lt;SubscriberMethod&gt;&gt;</code> 中根据 class 找出所有注解修饰过的方法的列表，再遍历值 <code>List&lt;SubscriberMethod&gt;</code> 中各项 <code>SubscriberMethod</code>，从中获得 <code>SubscriberMethod.eventType</code> 并使用 class 和 method 生成 <strong>newSubscription</strong> 放入通过 <code>eventType</code> 获取的订阅信息列表中</li>
+<li>post 时根据 <code>event</code> 获取 eventClass，根据 <code>eventClass</code> 获取 <code>subscriptionByEventType</code> 这个 Map 中的 <code>SubscriptionList</code>，遍历订阅信息列表发送 post 反射调用执行</li>
+<li><code>getDefault()</code>时使用了 <code>volatile</code> 修饰的双重检查的单例</li>
+</ul>
 
-稀疏数组
-稀疏数组可以看做是普通数组（值的无效数据量远大于有效数据量）的压缩
-使用额外的行列来对
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/01/05/SparseArray/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2020/01/05/AndroidCodeStyle/">Android 开发编码规范</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2020-01-05T15:20:30.000Z" itemprop="datePublished">
-          2020-01-05
-      </time>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     
-    | 
-    <a href='/tags/Android/'>Android</a>
+    <a class="pull-right" href="/2020/01/07/Animation/">
+        Animation →
+    </a>
     
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        此开发编码规范是对命名以及样式编码风格的规范说明侧重点是代码的可读性以及可扩展性，提升 Code Review 的效率对于开发中性能提升、故障避免以及内存优化等应当注意的规范，可以参考《阿里巴巴 Android 开发手册》
+</nav>
 
-Android Studio 规范
-尽量使用最新的稳定版 IDE 进行开发
-编码格式统一为 UTF-8
-编辑完.java .xml等文件后一定要格式化 格式化 格式化
-删除多余的 import ，减少警告出现
-文件
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2020/01/05/AndroidCodeStyle/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          
-        </nav>
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>End.</p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+
 
       
 <!-- ============================ Footer =========================== -->
